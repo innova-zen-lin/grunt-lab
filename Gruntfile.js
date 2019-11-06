@@ -52,25 +52,7 @@ module.exports=function(grunt){
             options: {
                 force: true
             },
-            build: ['build'],
-            buildPath: ['build/classes'],
-            generated: ['src/index.html',
-                        'src/index-email.html',
-                        'src/index-ap.html',
-                        'src/headless-index-ap.html',
-                        'src/index-e2mock.html',
-                        'src/portal.html',
-                        'src/js/**/*.min.js',
-                        'src/js/**/*.min.js.map',
-                        'src/js/**/*.mini.js',
-                        'src/templates/index.includes',
-                        'src/templates/index-ap.includes',
-                        'src/templates/headless-index-ap.includes',
-                        'src/templates/index-ap-template.html',
-                        'src/templates/e2mock.includes',
-                        'test/karma*.js',
-                        'test/protractor*.js'],
-            test: ['coverage']
+            build: ['build']
         },
 
         /* ===== connect ===== */
@@ -113,25 +95,15 @@ module.exports=function(grunt){
             watch:{
                 
             }
-        },
-        watch:{
-            css: {
-                files: ['src/css/*.scss'],
-                tasks: ['concatAll']
-              },
-            js: {
-                files: ['src/js/*.js', 'build/*.js'],
-                tasks: ['concatAll', 'concatJS']
-            }
         }
     });
 
     //load plugins
-    grunt.loadNpmTasks('grunt-contrib-concat')
-    grunt.loadNpmTasks('grunt-contrib-uglify')
-    grunt.loadNpmTasks('grunt-contrib-clean')
-    grunt.loadNpmTasks('grunt-contrib-connect')
-    grunt.loadNpmTasks('grunt-connect-proxy')
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-connect-proxy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     
     //regist tasks
@@ -147,7 +119,7 @@ module.exports=function(grunt){
         console.log("I'm crying")
     });
 
-    grunt.registerTask('concatAll',['concat', 'watch']);
+    grunt.registerTask('concatAll',['concat']);
     grunt.registerTask('concatJS',['concat:js']);
 
     grunt.registerTask('default', ['speak','yell'])
@@ -157,4 +129,5 @@ module.exports=function(grunt){
     grunt.registerTask('connect-all',['connect:site_1','connect:site_2']);
     grunt.registerTask('connect-one-proxy',['configureProxies:site_1','connect:site_1']);
     grunt.registerTask('connect-two',['connect:site_2']);
+    grunt.registerTask('build',['clean', 'concatAll']);
 };
