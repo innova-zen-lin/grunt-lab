@@ -1,0 +1,28 @@
+{
+  "name": "grunt-lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/innova-zen-lin/grunt-lab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/innova-zen-lin/grunt-lab/issues"
+  },
+  "homepage": "https://github.com/innova-zen-lin/grunt-lab#readme",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-connect-proxy": "^0.2.0",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^2.1.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}
